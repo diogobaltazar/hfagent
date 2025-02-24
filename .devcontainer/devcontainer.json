@@ -1,0 +1,34 @@
+{
+	"image": "hfagent-devcontainer:1.0.0",
+	"runArgs": [
+		"--name", "hfagent-devcontainer",
+		"--rm"
+	],
+	"workspaceFolder": "/home/${localEnv:USER}",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER},type=bind,consistency=cached",
+	"remoteUser": "${localEnv:USER}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"eamodio.gitlens",
+				"GitHub.vscode-pull-request-github",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"GitHub.vscode-github-actions",
+				"shalldie.background",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"kamikillerto.vscode-colorize",
+				"trond-snekvik.simple-rst",
+				"njpwerner.autodocstring"
+			],
+			"settings": {
+				"python.pythonPath": "/usr/local/bin/python"
+			}
+		}
+	},
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+	],
+	"postStartCommand": "sudo chown ${localEnv:USER}:docker /var/run/docker.sock && sudo chmod 660 /var/run/docker.sock",
+}

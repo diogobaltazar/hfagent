@@ -1,0 +1,11 @@
+sudo
+python3-pip
+ca-certificates
+wget
+zsh
+zip
+unzip
+curl
+nano
+jq
+tree
