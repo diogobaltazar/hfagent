@@ -4,7 +4,7 @@ FROM python:3.10
 WORKDIR /docs
 
 # Copy the documentation source files
-COPY docs /docs
+COPY docs/python-requirements.txt /docs
 
 # Install requirements from python-requirements.txt
 RUN pip install -r python-requirements.txt
