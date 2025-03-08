@@ -1,0 +1,39 @@
+networks:
+  hfagent:
+    name: hfagent
+    external: true
+
+services:
+  # USRID=$(id -u) USRNAME=$(whoami) docker compose build
+  devcontainer:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        USRID: ${USRID}
+        USRNAME: ${USRNAME}
+    image: hfagent-devcontainer:0.0.0
+    container_name: hfagent-devcontainer
+    networks:
+      - hfagent
+
+  hfagent-gh-actions-agent:
+    image: ghcr.io/diogobaltazar/hfagent-gh-actions-agent:0.0.0
+    container_name: hfagent-gh-actions-agent
+    networks:
+      - hfagent
+
+  hfagent-docs:
+    build:
+      context: .
+      dockerfile: docs/Dockerfile
+    image: ghcr.io/diogobaltazar/hfagent-docs:0.0.0
+    container_name: hfagent-docs
+    networks:
+      - hfagent
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./docs:/docs/docs
+    command: sphinx-autobuild sphinx/source sphinx/build --host 0.0.0.0
+
