@@ -21,8 +21,7 @@
 				"ms-python.python",
 				"kamikillerto.vscode-colorize",
 				"trond-snekvik.simple-rst",
-				"njpwerner.autodocstring",
-				"TabNine.tabnine-vscode"
+				"njpwerner.autodocstring"
 			],
 			"settings": {
 				"python.pythonPath": "/usr/local/bin/python"
