@@ -1,19 +1,21 @@
 FROM ubuntu:22.04
 
 # Define build-time argument
-ARG UID
-ARG UNAME
+ARG USRID
+ARG USRNAME
 
 # Set environment variable
-ENV UID=${UID}
-ENV UNAME=${UNAME}
+ENV USRID=${USRID}
+ENV USRNAME=${USRNAME}
 
 COPY .devcontainer/sys-requirements.txt .devcontainer/python-requirements.txt ./
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
 RUN apt update && xargs -a sys-requirements.txt apt install -y
 
-RUN useradd --uid $UID --create-home -s /bin/bash $UNAME
-RUN usermod -aG sudo $UNAME
-RUN echo "$UNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd --uid $USRID --create-home -s /bin/bash $USRNAME
+RUN usermod -aG sudo $USRNAME
+RUN echo "$USRNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Docker Installation ##########################################################
 RUN install -m 0755 -d /etc/apt/keyrings \

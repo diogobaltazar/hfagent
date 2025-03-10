@@ -9,3 +9,4 @@ curl
 nano
 jq
 tree
+bash-completion
