@@ -1,2 +1,1 @@
-- master [Issue #](https://github.com/NN-Research-Early-Development/hfagent/issues/)
 - HEAD [Issue #](https://github.com/NN-Research-Early-Development/hfagent/issues/)

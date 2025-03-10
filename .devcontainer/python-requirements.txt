@@ -1,1 +1,2 @@
 huggingface_hub==0.28.1
+-r ../docs/python-requirements.txt
