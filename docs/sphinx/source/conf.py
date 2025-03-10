@@ -28,3 +28,18 @@ source_suffix = ['.rst', '.md']
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+# filepath: /home/dipm/docs/sphinx/source/conf.py
+from docutils import nodes
+from docutils.parsers.rst import roles
+
+def agent_definition_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    node = nodes.inline(rawtext, text, **options)
+    node['classes'].append('agent-definition')
+    return [node], []
+
+roles.register_local_role('agent-definition', agent_definition_role)
+
+# filepath: /home/dipm/docs/sphinx/source/conf.py
+def setup(app):
+    app.add_css_file('custom.css')

@@ -1,6 +1,3 @@
-[course material](https://huggingface.co/learn/agents-course/unit0/introduction)
-
-An `agent` is that which has `agency`, or the ability to interact with and affect the environment. This ability is provided by `reasoning` (which creates a `plan`) and `utils` (which action the plan and affect the environment).
 
 ```
 An Agent is a system that leverages an AI model to interact with its environment in order to achieve a user-defined objective. It combines reasoning, planning, and the execution of actions (often via external tools) to fulfill tasks.

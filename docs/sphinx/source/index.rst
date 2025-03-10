@@ -1,14 +1,11 @@
-.. Your Project documentation master file, created by
-   sphinx-quickstart on Thu Oct 14 2023.
-
-Welcome to Your Project's documentation!
-=========================================
+hfagent
+=======
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    introduction/introduction
+   glossary
    contributing/contributing
    bibliography/bibliography
-

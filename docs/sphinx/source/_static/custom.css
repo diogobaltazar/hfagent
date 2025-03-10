@@ -1,0 +1,20 @@
+.agent-definition {
+  background-color: #6d6464;
+  /* Slightly dark background */
+  font-style: italic;
+  /* Italic letters */
+  padding: 10px;
+  /* Add some padding for better readability */
+  border-radius: 3px;
+  /* Add rounded corners */
+  display: block;
+  /* Make the element behave like a block element */
+  color: white;
+  /* Optional: Change text color for better contrast */
+}
+
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
