@@ -21,7 +21,7 @@ RUN echo "$UNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 ```json
 {
-	"image": "hfagent-devcontainer:1.0.0",
+	"image": "hfagent-devcontainer:0.0.0",
 	"runArgs": [
 		"--name", "hfagent-devcontainer"
 	],
@@ -55,7 +55,7 @@ RUN echo "$UNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 docker build \
 	--build-arg UID=$(id -u) \
 	--build-arg UNAME=$(whoami) \
-	-t hfagent-devcontainer:1.0.0 \
+	-t hfagent-devcontainer:0.0.0 \
 	-f .devcontainer/Dockerfile \
 	.
 ```
@@ -65,7 +65,7 @@ Run `Dev Containers: Reopen in Container`, this will find the image just build, 
 ```sh
 $ docker ps
 CONTAINER ID   IMAGE                        COMMAND                  CREATED              STATUS              PORTS     NAMES
-4ac78c801ba1   hfagent-devcontainer:1.0.0   "/bin/sh -c 'echo Co…"   About a minute ago   Up About a minute             hfagent-devcontainer
+4ac78c801ba1   hfagent-devcontainer:0.0.0   "/bin/sh -c 'echo Co…"   About a minute ago   Up About a minute             hfagent-devcontainer
 ```
 
 # docker installation

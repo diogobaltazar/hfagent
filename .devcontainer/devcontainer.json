@@ -1,5 +1,5 @@
 {
-	"image": "hfagent-devcontainer:1.0.0",
+	"image": "hfagent-devcontainer:0.0.0",
 	"runArgs": [
 		"--name", "hfagent-devcontainer",
 		"--rm"
