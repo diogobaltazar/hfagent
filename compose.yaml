@@ -32,8 +32,8 @@ services:
     networks:
       - hfagent
     ports:
-      - "8000:8000"
+      - "8000:8000"  # host: http://localhost:8000
+                     # docker network: http://hfagent-docs:8000
     volumes:
-      - ./docs:/docs/docs
-    command: sphinx-autobuild sphinx/source sphinx/build --host 0.0.0.0
-
+      - ~/hfagent/docs:/docs
+    command: "sphinx-autobuild /docs/sphinx/source /docs/sphinx/build --host 0.0.0.0"

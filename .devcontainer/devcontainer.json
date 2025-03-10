@@ -2,7 +2,8 @@
 	"image": "hfagent-devcontainer:0.0.0",
 	"runArgs": [
 		"--name", "hfagent-devcontainer",
-		"--rm"
+		"--rm",
+		"--network", "hfagent"
 	],
 	"workspaceFolder": "/home/${localEnv:USER}",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER},type=bind,consistency=cached",
