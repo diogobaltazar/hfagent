@@ -8,4 +8,7 @@ Welcome to Your Project's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   introduction/introduction
    contributing/contributing
+   bibliography/bibliography
+

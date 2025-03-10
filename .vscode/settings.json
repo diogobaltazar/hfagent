@@ -1,0 +1,25 @@
+{
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "github.copilot.editor.enableCodeActions": true,
+    "editor.fontFamily": "'Source Code Pro', Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'Source Code Pro'",
+    "editor.fontSize": 11,
+    "editor.lineHeight": 18,
+    "editor.letterSpacing": 0.3,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.minimap.scale": 3,
+    "editor.fontLigatures": true
+}
