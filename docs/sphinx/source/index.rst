@@ -9,3 +9,4 @@ hfagent
    glossary
    contributing/contributing
    bibliography/bibliography
+   installation
