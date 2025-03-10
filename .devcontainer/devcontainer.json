@@ -1,8 +1,9 @@
 {
-	"image": "hfagent-devcontainer:1.0.0",
+	"image": "hfagent-devcontainer:0.0.0",
 	"runArgs": [
 		"--name", "hfagent-devcontainer",
-		"--rm"
+		"--rm",
+		"--network", "hfagent"
 	],
 	"workspaceFolder": "/home/${localEnv:USER}",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER},type=bind,consistency=cached",
@@ -27,8 +28,12 @@
 			}
 		}
 	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
 	"mounts": [
-		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+		"source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind"
 	],
 	"postStartCommand": "sudo chown ${localEnv:USER}:docker /var/run/docker.sock && sudo chmod 660 /var/run/docker.sock",
 }
