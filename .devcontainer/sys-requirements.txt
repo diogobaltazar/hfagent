@@ -10,3 +10,4 @@ nano
 jq
 tree
 bash-completion
+gh

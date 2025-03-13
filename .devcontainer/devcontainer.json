@@ -1,9 +1,11 @@
 {
 	"image": "hfagent-devcontainer:0.0.0",
 	"runArgs": [
-		"--name", "hfagent-devcontainer",
+		"--name",
+		"hfagent-devcontainer",
 		"--rm",
-		"--network", "hfagent"
+		"--network",
+		"hfagent"
 	],
 	"workspaceFolder": "/home/${localEnv:USER}",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER},type=bind,consistency=cached",
@@ -27,9 +29,6 @@
 				"python.pythonPath": "/usr/local/bin/python"
 			}
 		}
-	},
-	"features": {
-		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
