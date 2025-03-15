@@ -11,3 +11,6 @@
 .lesshst
 .config/
 .ssh
+.pulumi
+# ignore all .env files
+.env
