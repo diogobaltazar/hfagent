@@ -18,7 +18,10 @@ services:
       - hfagent
 
   hfagent-gh-actions-agent:
-    image: ghcr.io/diogobaltazar/hfagent-gh-actions-agent:0.0.0
+    build:
+      context: .
+      dockerfile: .github/agent/Dockerfile
+    image: versionminus/hfagent-gh-actions-agent:0.0.0
     container_name: hfagent-gh-actions-agent
     networks:
       - hfagent
@@ -27,13 +30,15 @@ services:
     build:
       context: .
       dockerfile: docs/Dockerfile
-    image: ghcr.io/diogobaltazar/hfagent-docs:0.0.0
+    image: versionminus/hfagent-docs:0.0.0
     container_name: hfagent-docs
     networks:
       - hfagent
     ports:
-      - "8000:8000"  # host: http://localhost:8000
-                     # docker network: http://hfagent-docs:8000
+      - "8000:8000"
+        # host: http://localhost:8000
+        # docker network: http://hfagent-docs:8000
     volumes:
       - ~/hfagent/docs:/docs
     command: "sphinx-autobuild /docs/sphinx/source /docs/sphinx/build --host 0.0.0.0"
+    restart: no
